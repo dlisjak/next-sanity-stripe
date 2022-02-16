@@ -17,7 +17,7 @@ const Category = ({ product }) => {
         </div>
         <div className="flex">
           {(product.categories || []).map((category) => (
-            <Link href={`/category/${category.slug}`} key={category.slug}>
+            <Link href={`/categories/${category.slug}`} key={category.slug}>
               <a>
                 <span className="mr-2">{category.title}</span>
               </a>
@@ -37,7 +37,7 @@ export async function getStaticPaths() {
     }`;
   const products = await sanity.fetch(productsQuery);
   const paths = products.map((product) => ({
-    params: { product: product.slug },
+    params: { slug: product.slug },
   }));
 
   return {
@@ -58,7 +58,7 @@ export async function getStaticProps({ params }) {
       "categories": categories[] -> {title, "slug": slug.current},
     }`;
 
-  const product = await sanity.fetch(productQuery, { slug: params.product });
+  const product = await sanity.fetch(productQuery, { slug: params.slug });
   if (product) {
     product.productImgSrc = urlFor(product.defaultProductVariant.images[0]).width(450).url();
   }
