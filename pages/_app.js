@@ -1,7 +1,8 @@
+
 import '../styles/main.css';
 
 const MyApp = ({ Component, pageProps, router }) => {
-  const route = router.route;
+  const { route } = router;
 
   return (
     <Component {...pageProps} key={route} />
