@@ -19,11 +19,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "utils/serializeModels.js",
+    "web/utils/serializeModels.js",
     "pages/stanovanja/[uuid]",
     "pages/sitemap.xml.js",
     "pages/_app.js",
-    "components/Cart/index.js"
+    "web/Cart/index.js"
   ],
   "exclude": ["node_modules"]
 }
