@@ -17,7 +17,7 @@ const Category = ({ product }) => {
         </div>
         <div className="flex">
           {(product.categories || []).map((category) => (
-            <Link href={`/category/${category.slug}`} key={category.slug}>
+            <Link href={`/categories/${category.slug}`} key={category.slug}>
               <a>
                 <span className="mr-2">{category.title}</span>
               </a>

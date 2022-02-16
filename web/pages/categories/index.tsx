@@ -7,7 +7,7 @@ const Category = ({ categories }) => {
       <h1>Categories</h1>
       <div className="flex flex-wrap">
         {categories.map((category) => (
-          <Link href={`/category/${category.slug}`} key={category.slug}>
+          <Link href={`/categories/${category.slug}`} key={category.slug}>
             <a className="flex justify-center flex-col text-center border-2 w-40 h-20">
               <h3 className="my-4">{category.title}</h3>
             </a>
