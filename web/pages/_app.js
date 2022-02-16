@@ -7,7 +7,9 @@ const MyApp = ({ Component, pageProps, router }) => {
   return (
     <>
       <Navbar />
-      <Component {...pageProps} key={route} />
+      <div className='container mx-auto'>
+        <Component {...pageProps} key={route} />
+      </div>
     </>
   );
 };
