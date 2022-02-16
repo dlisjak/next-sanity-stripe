@@ -8,7 +8,7 @@ const Products = ({ products }) => {
       <h1>Products</h1>
       <div className="flex flex-wrap">
         {products.map((product) => (
-          <Link href={`/product/${product.slug.current}`} key={product._id}>
+          <Link href={`/products/${product.slug.current}`} key={product._id}>
             <a className="flex justify-center flex-col text-center border-2">
               <h3 className="my-4">{product.title}</h3>
               <Image src={product.productImgSrc} width={250} height={250} />

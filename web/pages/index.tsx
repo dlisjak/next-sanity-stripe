@@ -11,7 +11,7 @@ const Index = ({ featuredProducts }) => {
         <h2>Featured products</h2>
         <div className="flex justify-evenly">
           {featuredProducts.map((product) => (
-            <Link href={`/product/${product.slug.current}`} key={product._id}>
+            <Link href={`/products/${product.slug.current}`} key={product._id}>
               <a className="flex justify-center flex-col text-center border-2">
                 <h3 className="my-4">{product.title}</h3>
                 <Image src={product.productImgSrc} width={250} height={250} />
