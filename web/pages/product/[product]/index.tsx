@@ -9,14 +9,14 @@ const Category = ({ product }) => {
       <div className="flex">
         <Image src={product.productImgSrc} width={450} height={450} />
         <div className="flex">
-          {product.tags.map((tag) => (
+          {(product.tags || []).map((tag) => (
             <span className="mr-2" key={tag}>
               {tag}
             </span>
           ))}
         </div>
         <div className="flex">
-          {product.categories.map((category) => (
+          {(product.categories || []).map((category) => (
             <Link href={`/category/${category.slug}`} key={category.slug}>
               <a>
                 <span className="mr-2">{category.title}</span>
