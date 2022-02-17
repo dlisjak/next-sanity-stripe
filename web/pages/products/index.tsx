@@ -1,21 +1,15 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import ProductCard from '../../components/ProductCard';
+import ProductGrid from '../../components/ProductGrid';
 
 const Products = ({ products }) => {
-  console.log(products);
   return (
     <div>
       <h1>Products</h1>
-      <div className="flex flex-wrap">
+      <ProductGrid title="All products">
         {products.map((product) => (
-          <Link href={`/products/${product.slug.current}`} key={product._id}>
-            <a className="flex justify-center flex-col text-center border-2">
-              <h3 className="my-4">{product.title}</h3>
-              <Image src={product.productImgSrc} width={250} height={250} />
-            </a>
-          </Link>
+          <ProductCard product={product} key={product._id} />
         ))}
-      </div>
+      </ProductGrid>
     </div>
   );
 };
