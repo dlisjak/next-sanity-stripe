@@ -6,12 +6,9 @@ const Cart = ({ children }) => {
   return (
     <CartProvider
       mode="payment"
-      cartMode="client-only"
+      cartMode="checkout-session"
       stripe={stripeKey}
-      successUrl={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/success`}
-      cancelUrl={process.env.NEXT_PUBLIC_DOMAIN_URL}
       currency="EUR"
-      billingAddressCollection={true}
     >
       {children}
     </CartProvider>

@@ -1,30 +1,21 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import ProductCard from '../components/ProductCard';
+import ProductGrid from '../components/ProductGrid';
 
 const Index = ({ featuredProducts }) => {
-  console.log(featuredProducts);
   return (
     <div>
       <h1>Home</h1>
 
-      <div>
-        <h2>Featured products</h2>
-        <div className="flex justify-evenly">
-          {featuredProducts.map((product) => (
-            <Link href={`/products/${product.slug.current}`} key={product._id}>
-              <a className="flex justify-center flex-col text-center border-2">
-                <h3 className="my-4">{product.title}</h3>
-                <Image src={product.productImgSrc} width={250} height={250} />
-              </a>
-            </Link>
-          ))}
-        </div>
-      </div>
+      <ProductGrid title="Izpostavljeno">
+        {featuredProducts.map((product) => (
+          <ProductCard product={product} key={product._id} />
+        ))}
+      </ProductGrid>
     </div>
   );
 };
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const sanity = (await import('../utils/sanity/client')).default;
   const imageUrlBuilder = (await import('@sanity/image-url')).default;
   function urlFor(source) {
