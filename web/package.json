@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "nodemon server/index.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -20,7 +20,9 @@
     "@stripe/stripe-js": "^1.23.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "axios": "^0.26.0",
+    "express": "^4.17.3",
     "next": "^12.0.10",
+    "next-sanity": "^0.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.27.0",
