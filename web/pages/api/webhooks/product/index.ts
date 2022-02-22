@@ -2,7 +2,7 @@ import sanityStripeMiddleware from '../../../../server/middleware/sanityStripeMi
 
 export const createStripeProducts = async (req, res) => {
   try {
-   sanityStripeMiddleware(req, res)
+   await sanityStripeMiddleware(req, res)
   } catch (err) {
     return { status: 'Error', err: err?.response?.data };
   }
