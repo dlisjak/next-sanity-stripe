@@ -11,11 +11,11 @@ export default function handler(req, res) {
         description: req.body.blurb.en,
         images: `https://cdn.sanity.io/images/dymq6s3c/production/${req.body.defaultProductVariant.images.assets._ref}`,
       });
-      const price = await stripe.prices.create({
-        unit_amount: req.body.defaultProductVariant.price,
-        currency: 'eur',
-        product: req.body.slug.current,
-      });
+      // const price = await stripe.prices.create({
+      //   unit_amount: req.body.defaultProductVariant.price,
+      //   currency: 'eur',
+      //   product: req.body.slug.current,
+      // });
 
       res.status(200).json('Sanity-Stripe-Middleware Successfully Created Product');
     } catch (error) {
